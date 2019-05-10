@@ -5,7 +5,7 @@ namespace Controllers;
 
 class IndexController extends JSONController{
 
-  public function home(){
+  public function list(){
     return $this->json("Hello !");
   }
   

@@ -4,14 +4,14 @@ require_once("../vendor/autoload.php");
 session_start();
 
 $request_uri = $_SERVER["REQUEST_URI"];
-list($controller, $action, $rest) = explode("/", $request_uri);
 
-var_dump($controller);
-var_dump($action);
-die();
+@list($initialSlash,
+     $controller_query, 
+     $action_query, 
+     $rest) = explode("/", $request_uri);
 
-$controller_query = $_GET["controller"] ?? "index";
-$action = $_GET["action"] ?? "home";
+$controller_query = !empty($controller_query) ? $controller_query : "index";
+$action = !empty($action_query) ? $action_query : "list";
 
 $controllerName = 
               "\Controllers\\".
