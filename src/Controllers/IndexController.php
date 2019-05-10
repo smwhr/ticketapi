@@ -3,11 +3,10 @@
 namespace Controllers;
 
 
-class IndexController{
+class IndexController extends JSONController{
 
   public function home(){
-    echo "SALUT !";
-
+    return $this->json("Hello !");
   }
   
 }
