@@ -1,0 +1,12 @@
+{
+    "require": {
+        "zendframework/zend-barcode": "^2.7"
+    },
+    "autoload": {
+      "psr-0": { 
+        "Controllers": "src/",
+        "Models": "src/",
+        "Services": "src/"
+      }
+    }
+}
