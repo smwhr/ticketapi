@@ -4,11 +4,12 @@ namespace Models;
 
 class Event{
 
+
   public $id;
   public $name;
   public $start_at;
   public $location;
-
+  
   public function __construct(){}
 
   public static function fetchList($conn){
