@@ -1,6 +1,6 @@
 <?php
 
-require_once("../../vendor/autoload.php");
+require_once("../vendor/autoload.php");
 require_once("../src/Services/DBConnect.php");
 use Services\DBConnect as DBConnect;
 session_start();
