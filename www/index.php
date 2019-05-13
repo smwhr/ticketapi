@@ -1,7 +1,10 @@
 <?php
-require_once("../vendor/autoload.php");
 
+require_once("../../vendor/autoload.php");
+require_once("../src/Services/DBConnect.php");
+use Services\DBConnect as DBConnect;
 session_start();
+
 
 $request_uri = $_SERVER["REQUEST_URI"];
 
@@ -17,8 +20,8 @@ $controllerName =
               "\Controllers\\".
               ucfirst($controller_query)."Controller";
 
-$config = json_decode(file_get_contents("../conf/config.json"), true);
-$db = new \Services\DBConnect(
+$config = json_decode(file_get_contents("../conf/config.json.dist"), true);
+$db = new DBConnect(
               $config["database"]["dsn"],
               $config["database"]["user"],
               $config["database"]["password"]
